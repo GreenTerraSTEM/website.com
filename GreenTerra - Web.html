@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenTerra</title>
+    <link rel="icon" href="GreenTerra - Logo.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('Tierra Tiled.png') repeat;
+            color: #e8f5e9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;    
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            background-color: #1b5e20;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        /* Animación de salto */
+        .jump {
+            animation: jump 0.3s ease;
+        }
+
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: #e8f5e9;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #388e3c;
+            transition: background-color 0.3s, transform 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: #66bb6a;
+            transform: translateY(-5px);
+        }
+
+        section {
+            display: none;
+            opacity: 0;
+            padding: 20px;
+            margin: 20px;
+            width: 80%;
+            max-width: 800px;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            background-color: #263238;
+            color: #e8f5e9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .active {
+            display: block;
+            opacity: 1;
+        }
+
+        .button-download {
+            background-color: #1b5e20;
+            color: #e8f5e9;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s ease;
+        }
+
+        .button-download:hover {
+            background-color: #388e3c;
+            transform: scale(1.1);
+        }
+
+        #inicio {
+            display: block;
+            opacity: 1;
+            padding: 20px;
+            margin: 20px;
+            width: 80%;
+            max-width: 800px;
+            background-color: #263238;
+            border: 1px solid #66bb6a;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h2 {
+            color: #e8f5e9;
+        }
+
+        p {
+            color: #b0bec5;
+        }
+
+        #miembros{
+            text-align: center;
+        }
+
+        #niveles{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Logo con animación de salto al hacer clic -->
+    <div class="logo" onclick="animateLogo()">
+        <img src="GreenTerra - Logo.png" alt="GreenTerra Logo">
+    </div>
+    <nav>
+        <a href="javascript:void(0);" onclick="showSection('miembros')">Miembros</a>
+        <a href="javascript:void(0);" onclick="showSection('acerca-de')">Acerca de</a>
+        <a href="javascript:void(0);" onclick="showSection('niveles')">Niveles</a>
+        <a href="javascript:void(0);" onclick="showSection('descarga')">Descarga</a>
+    </nav>
+</header>
+
+<section id="inicio">
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos un equipo apasionado por la sostenibilidad y el medio ambiente. GreenTerra es un proyecto que busca crear conciencia ecológica a través de un videojuego donde los jugadores restauran la naturaleza y equilibran el ecosistema.</p>
+    <h2>Nuestra misión</h2>
+    <p>Nuestra misión con el videojuego es concientizar a las personas sobre el estado actual del planeta, todo mediante hechos científicos y reales que lo respalden.</p>
+</section>
+
+<section id="miembros">
+    <h2>Miembros</h2>
+    <p>Maurizio Mongelós - Programación y Manual de Usuario</p>
+    <img src="MM.png" alt="MM">
+    <p>Rafael Rodas - Diseñador de Página Web</p>
+    <img src="RR.png" alt="RR">
+    <p>Antonella Rodríguez - Documentación, Diseño Gráfico y Finanzas</p>
+    <img src="AR.png" alt="AR">
+    <p>Juan Torres - Programación y Finanzas</p>
+    <img src="JT.png" alt="JT">
+    <p>Liliana Zárate - Storytelling y Documentación</p>
+    <img src="LZ.png" alt="LZ">
+</section>
+
+<section id="acerca-de">
+    <h2>Acerca de GreenTerra</h2>
+    <p>Este videojuego de aventura y acción fue diseñado con el objetivo de
+        incentivar a un público de entre 12 y 19 años a tomar conciencia y
+        fomentar la empatía con respecto al medio ambiente. Es por eso que
+        en el videojuego presentamos una versión del planeta
+        completamente deteriorada y destruida por causas humanas, es
+        decir, un mundo post-apocalíptico.
+        Comienza con la introducción de un personaje que está a cargo de
+        informar al usuario sobre el estado actual del planeta, guiándolo a
+        través de misiones para revertir los daños causados.</p>
+</section>
+
+<section id="niveles">
+    <h2>Niveles</h2>
+    <h3>NIVEL 1 - ROOTS OF HOPE</h3>
+    <p>El primer personaje llamado Carl es introducido. Este
+        solicita al usuario que lo acompañe a plantar árboles y
+        restaurar la vida silvestre con diferentes tipos de
+        plantas, mientras está plantando se acercan algunas
+        aves con aspecto raro que tratan de atacar al usuario
+        pero una vez que, planta todo, estas desaparecen.</p>
+    <img src="stemnivel1.png" alt="n1">
+    <h3>NIVEL 2 - STREET'S SHINE</h3>
+    <p>Carl introduce al segundo personaje (Rosa) que le pide al usuario que le siga hasta un barrio
+        pequeño, al llegar le solicita que junte la basura
+        esparcida en la vereda y el pórtico de las casas.
+        Una vez finalizado esto, las casas cambian su
+        tono (antes eran color opaco, lleno de polvo) a
+        uno limpio y normal (a medida que el usuario está
+        trabajando en este nivel se puede ver un
+        personaje nuevo, de aspecto sospechoso pero él
+        desaparece de repente).</p>
+    <img src="stemnivel2.png" alt="n2">
+    <h3>NIVEL 3 - SURREAL REFLECTIONS</h3>
+    <p>Rosa le comenta al usuario como ya no es posible conseguir
+        agua potable y le pide que le acompañe a ver el horrible
+        estado en el que se encuentra el lago que está cerca. Al
+        llegar le pide que limpie sacando la basura, y cuando el
+        usuario trata de sacar la segunda basura salta un signo de
+        emergencia en el juego señalizando que hay algo en el agua
+        y al hacer zoom se ven unos bichos radioactivos que va a
+        tener que eliminar el usuario.</p>
+    <img src="stemnivel3.png" alt="n3">
+    <h3>NIVEL 4 - BATTLE OF THE SHADOWS</h3>
+    <p>Una vez que el usuario logra pasar el nivel 3,
+        detrás de él, aparece el personaje sospechoso
+        del nivel 2, este personaje usa una máscara y
+        utiliza uniforme de agente, cuando se introduce
+        (James) demuestra que él desea que todo siga
+        como está y le pide al usuario que no mejore el
+        estado del medioambiente, luego el trata de
+        atacar al usuario y se pelean entre ambos. Una
+        vez que el usuario logra ganarle al agente pasa
+        al nivel final (5).</p>
+    <img src="stemnivel4.png" alt="n4">
+    <h3>NIVEL 5 - DUEL OF REDEMPTION</h3>
+    <p>Se introduce un personaje final (Kira), este personaje cuenta
+        toda la historia (usando flashbacks de cómo estaba antes el
+        planeta) y pide al usuario que le acompañe a un pequeño
+        edificio para purificar el aire con una máquina. Al llegar ahí
+        le encuentran al villano final llamado Don (es el dueño de
+        una de las empresas que destruyeron el planeta) y le dice
+        que no le permitirá limpiar el ambiente.Esto desencadena
+        una gran batalla y una vez que el usuario gane, Kira le pedirá
+        al usuario que encienda la máquina y cuando se encienda
+        todo se reestablecerá.
+        Posteriormente, una explicación sobre la importancia de
+        cuidar el medioambiente y las consecuencias de que si esto
+        no se realiza aparecerá en la pantalla del usuario junto con
+        un agradecimiento por haber probado el videojuego.</p>
+    <img src="stemnivel5.png" alt="n5">
+</section>
+
+<section id="descarga">
+    <h2>Descarga GreenTerra</h2>
+    <a href="GreenTerra.zip" class="button-download" download="GreenTerra.zip">Descargar Ahora</a>
+</section>
+
+<script>
+    function animateLogo() {
+        const logo = document.querySelector('.logo img');
+        logo.classList.add('jump');
+        logo.addEventListener('animationend', () => {
+            logo.classList.remove('jump');
+            window.location.reload();
+        });
+    }
+
+    function showSection(sectionId) {
+        const inicioSection = document.getElementById('inicio');
+        inicioSection.style.display = 'none';
+
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => section.classList.remove('active'));
+
+        setTimeout(() => {
+            const sectionToShow = document.getElementById(sectionId);
+            sectionToShow.classList.add('active');
+        }, 200);
+    }
+</script>
+
+</body>
+</html>
